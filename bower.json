@@ -1,0 +1,22 @@
+{
+  "name": "TUHacks",
+  "version": "0.0.0",
+  "homepage": "https://github.com/btford/angular-express-seed",
+  "authors": [
+    "Yaw Asabere <yasabere@gmail.com>"
+  ],
+  "description": "TUHask bower shit",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "scrollr": "~0.6.24"
+  }
+}
