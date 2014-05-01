@@ -1,1 +1,41 @@
-p This is the partial for view 1.
+main
+  section#slide-1.homeSlide
+  
+    div.bcg(
+      data-center="background-position: 50% 0px;", 
+      data-top-bottom="background-position: 50% -100px;", 
+      data-anchor-target="#slide-1"
+      )
+      
+      div.hsContainer
+      
+        div.hsContent(
+          data-center="opacity: 1",
+          data-106-top="opacity: 0",
+          data-anchor-target="#slide-1 h2"
+          )
+          h2 Fade out elements before 
+            br 
+            p they leave viewport
+          
+  section#slide-2
+    
+    div.bcg(
+      data-0="background-color:rgb(1,27,59);",
+      data-top="background-color:(0,0,0);",
+      data-anchor-target="#slide-2"
+      )
+      
+      div.hsContainer
+        
+        div.hsContent
+      
+          h2(
+            data--200-bottom="opacity: 0"
+            data-center="opacity: 1"
+            data-206-top="opacity: 1"
+            data-106-top="opacity: 0"
+            data-anchor-target="#slide-2 h2"
+            )
+            
+            p Fade me in and out

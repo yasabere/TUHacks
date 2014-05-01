@@ -2,15 +2,22 @@ extends layout
 
 block body
   div(ng-controller='AppCtrl')
+  
+    nab.navbar.navbar-default.navbar-fixed-top(
+      role="navigation"
+      )
+      
+      div.container
+        a.navbar-brand Hack Temple
+        p.navbar-text.navbar-right test
+      
+    div(ng-view)
     h2 Hello {{name}}
     ul.menu
       li
         a(href='view1') view1
       li
         a(href='view2') view2
-
-    div(ng-view)
-
     div
       | Angular seed app: v
       span(app-version)
@@ -22,3 +29,4 @@ block body
   script(src='js/filters.js')
   script(src='js/directives.js')
   script(src='system/lib/bootstrap/dist/js/bootstrap.js')
+  script(src='system/lib/scrollr/dist/skrollr.min.js')

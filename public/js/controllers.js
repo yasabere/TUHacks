@@ -19,6 +19,15 @@ angular.module('myApp.controllers', []).
   }).
   controller('MyCtrl1', function ($scope) {
     // write Ctrl here
+    //alert("Hack Temple!!!!!!");
+    
+    // Init Skrollr
+    var s = skrollr.init({
+        render: function(data) {
+            //Debugging - Log the current scroll position.
+            //console.log(data.curTop);
+        }
+    });
 
   }).
   controller('MyCtrl2', function ($scope) {

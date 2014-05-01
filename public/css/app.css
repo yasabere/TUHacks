@@ -1,3 +1,21 @@
+body, html {
+	height: 100%;
+	min-height: 100%;
+	background-color: #000000;
+}
+main {
+	overflow-x: hidden;
+}
+
+.bcg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
 /* app css stylesheet */
 
 .menu {
@@ -27,4 +45,46 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+/* CSS */
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 1;
+}
+.hsContent {
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Slide 1 */
+#slide-1 .bcg {
+  background-image:url('http://lorempixel.com/output/city-q-c-833-480-8.jpg');
+  height: 800px;
+}
+
+/* CSS - Slide 2 */
+#slide-2 .bcg {
+    background: none;
+    background-color: #010101;
+    height: 310px;
+    text-align: center
 }
