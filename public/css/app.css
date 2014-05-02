@@ -77,14 +77,13 @@ main {
 
 /* Slide 1 */
 #slide-1 .bcg {
-  background-image:url('http://lorempixel.com/output/city-q-c-833-480-8.jpg');
-  height: 800px;
+  background-image:url('../images/templemade.png');
+  height: 98vh;
 }
 
 /* CSS - Slide 2 */
 #slide-2 .bcg {
     background: none;
     background-color: #010101;
-    height: 310px;
     text-align: center
 }
