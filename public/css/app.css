@@ -1,7 +1,7 @@
 body, html {
 	height: 100%;
 	min-height: 100%;
-	background-color: #000000;
+	background-color: #EFEFEF;
 }
 main {
 	overflow-x: hidden;
@@ -81,9 +81,19 @@ main {
   height: 98vh;
 }
 
+#slide-1 .bcg.bcg-fade-out {
+  background-image:url('../images/templemade_original.jpg');
+  height: 98vh;
+}
+
 /* CSS - Slide 2 */
 #slide-2 .bcg {
     background: none;
     background-color: #010101;
     text-align: center
+}
+
+.flip-clock-label {
+	color: rgb(235, 235, 235) !important;
+    font-weight: bold;
 }

@@ -28,6 +28,11 @@ angular.module('myApp.controllers', []).
             //console.log(data.curTop);
         }
     });
+    
+    var clock = $('#count-down-clock').FlipClock(3600 * 24 * 3, {
+		clockFace: 'DailyCounter',
+		countdown: true
+    });
 
   }).
   controller('MyCtrl2', function ($scope) {

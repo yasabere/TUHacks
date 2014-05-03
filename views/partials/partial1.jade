@@ -11,42 +11,75 @@ main
       data-anchor-target="#slide-1 h1"
       )
     
-      div.container(
+      div(
         style="text-align:center"
         )
         ul.nav.navbar-nav
           li.active
-            a Register
+            a Home
           li
             a Info
-  
-    div.bcg(
-      data-center="background-position: 50% 0px;", 
-      data-top-bottom="background-position: 50% -100px;", 
-      data-anchor-target="#slide-1"
+          li
+            a Directions
+          li
+            a Schedule
+          li
+            a Sponsors
+            
+    div(
+      style="position:absolute; z-index:3; margin-top:50px;"
       )
       
-      div.hsContainer
+      div.hsContainer(
+        data-0="opacity:.8;",
+        data-top="opacity:0;",
+        data-anchor-target="#slide-2",
+        )
       
-        div.hsContent(
-          data-center="opacity: 1",
-          data-200-top="opacity: .95",
-          data-0-top="opacity: 0",
-          data-anchor-target="#slide-1 h1"
-          )
+        div.hsContent
+        
+          br
+          br
+        
+          div.text-center(
+            style="margin: 0 auto;text-align: center;"
+            )
+            span#count-down-clock.center-block(
+              style="display:inline-block; text-align: center; width:620px;"
+              )
+        
           h1(
             style="font-size:80px; letter-spacing:-10px;"
             ) &lt;TUHacks/&gt;
           img(
           	src="images/tulogo.png"
+            style="height:300px; height:30vh;"
             )
           h2 Fall 2014
           
+          br 
+          
+          button Register
+            
+    div.bcg(
+      data-center="background-position: 50% 0px;",
+      data-50-top="opacity: .7",
+      data-top-bottom="opacity: 1; background-position: 50% -100px;",
+      data-anchor-target="#slide-1",
+      style="position:absolute; z-index:2;"
+      )
+  
+    div.bcg.bcg-fade-out(
+      data-center="background-position: 50% 0px;", 
+      data-top-bottom="background-position: 50% -100px;", 
+      data-anchor-target="#slide-1"
+      )
+      
   section#slide-2
     
     div.bcg(
       data-0="background-color:rgb(158,27,52);",
-      data-top="background-color:(0,0,0);",
+      data-top="background-color:rgb(74, 12, 24);",
       data-anchor-target="#slide-2"
       )
       
