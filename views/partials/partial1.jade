@@ -1,5 +1,24 @@
 main
+
   section#slide-1.homeSlide
+  
+    nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse(
+      role="navigation"
+      style="background-color:black); border:0px",
+      data-center="opacity: .5",
+      data-200-top="opacity: .6",
+      data-0-top="opacity: 1",
+      data-anchor-target="#slide-1 h1"
+      )
+    
+      div.container(
+        style="text-align:center"
+        )
+        ul.nav.navbar-nav
+          li.active
+            a Register
+          li
+            a Info
   
     div.bcg(
       data-center="background-position: 50% 0px;", 
