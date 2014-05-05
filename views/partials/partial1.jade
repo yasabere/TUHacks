@@ -5,38 +5,50 @@ main
     nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse(
       role="navigation"
       style="background-color:black); border:0px",
-      data-center="opacity: .5",
-      data-200-top="opacity: .6",
-      data-0-top="opacity: 1",
-      data-anchor-target="#slide-1 h1"
+      data-0="opacity:.6;",
+      data-top="opacity:1;",
+      data-anchor-target="#slide-2 h1"
       )
     
-      div(
-        style="text-align:center"
+      div.container(
+        style="text-align:center; width:425px"
         )
         ul.nav.navbar-nav
           li.active
-            a Home
+            a(
+              ng-click="scrollToSlide(1)"
+              ) Home
           li
-            a Info
+            a(
+              ng-click="scrollToSlide(2)"
+              ) Info
           li
-            a Directions
+            a(
+              ng-click="scrollToSlide(3)"
+              ) Directions
           li
-            a Schedule
+            a(
+              ng-click="scrollToSlide(4)"
+              ) Schedule
           li
-            a Sponsors
+            a(
+              ng-click="scrollToSlide(5)"
+              ) Sponsors
             
     div(
-      style="position:absolute; z-index:3; margin-top:50px;"
+      style="position:absolute; z-index:3; margin-top:0px; height:100%;"
       )
       
       div.hsContainer(
         data-0="opacity:.8;",
         data-top="opacity:0;",
         data-anchor-target="#slide-2",
+        style="height:100%; position:relative"
         )
       
-        div.hsContent
+        div.hsContent(
+          style="height:100%;"
+          )
         
           br
           br
@@ -59,7 +71,9 @@ main
           
           br 
           
-          button Register
+          button(
+            style="position:relative;margin-top:0px; border: 0px; background-color:rgba(20,20,20,.5); padding:10px; font-size:24; font-weight:bold;"
+            ) REGISTER
             
     div.bcg(
       data-center="background-position: 50% 0px;",
@@ -79,7 +93,7 @@ main
     
     div.bcg(
       data-0="background-color:rgb(158,27,52);",
-      data-top="background-color:rgb(74, 12, 24);",
+      data-top="background-color:rgb(93, 15, 30);",
       data-anchor-target="#slide-2"
       )
       
@@ -88,7 +102,9 @@ main
         div.hsContent
           
           br
-        
+          br
+          br
+          
           span(
             style="font-size:50px;"
           ) TEMPLE UNIVERSITY HACKATHON
@@ -101,6 +117,7 @@ main
             div.col-md-6
               span.pull-left 
                h1 HOURS
+          div.row     
             div.col-md-6
               span.pull-right 
                h1 
@@ -108,6 +125,7 @@ main
             div.col-md-6
               span.pull-left 
                h1 HACKERS
+          div.row     
             div.col-md-6
               span.pull-right 
                h1 
@@ -115,6 +133,11 @@ main
             div.col-md-6
               span.pull-left 
                h1 IN PRIZES
+               
+          br
+          br
+          br
+          
           h2(
             data--200-bottom="opacity: 0"
             data-center="opacity: 1"
@@ -122,3 +145,32 @@ main
             data-106-top="opacity: 0"
             data-anchor-target="#slide-2 h2"
             )
+  section#slide-3
+    div.bcg
+      div.hsContainer
+        div.hsContent
+          h1 Directions
+          
+  section#slide-4
+    
+    div.bcg(
+      data-0="background-color:rgb(158,27,52);",
+      data-top="background-color:rgb(93, 15, 30);",
+      data-anchor-target="#slide-4"
+      )
+      
+      div.hsContainer
+        
+        div.hsContent
+          
+          br
+          br
+          br
+          
+          span(
+            style="font-size:50px;"
+          ) TEMPLE UNIVERSITY HACKATHON
+          
+          br
+          br
+          br  

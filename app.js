@@ -26,6 +26,8 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
+app.use(express.favicon("public/images/favicon.ico")); 
+
 // development only
 if (app.get('env') === 'development') {
   app.use(express.errorHandler());
