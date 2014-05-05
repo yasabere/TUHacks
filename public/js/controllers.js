@@ -30,9 +30,9 @@ angular.module('myApp.controllers', []).
     });
     
     var clock = $('#count-down-clock').FlipClock(3600 * 24 * 3, {
-		clockFace: 'DailyCounter',
-		countdown: true
-    });
+			clockFace: 'DailyCounter',
+			countdown: true
+			});
     
     $scope.scrollToSlide = function(slideId){
       
@@ -68,8 +68,23 @@ angular.module('myApp.controllers', []).
                  
             }
         }
-    }
-
+    };
+	
+		//load google maps
+		function initialize() {
+			var mapOptions = {
+				center: new google.maps.LatLng(39.982094, -75.154656),
+				zoom: 17,
+				scrollwheel: false,
+				navigationControl: false,
+				mapTypeControl: false,
+				scaleControl: false,
+				disableDefaultUI: true
+			};
+			var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+		}
+	  initialize();
+		
   }).
   controller('MyCtrl2', function ($scope) {
     // write Ctrl here

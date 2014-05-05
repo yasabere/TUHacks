@@ -94,6 +94,11 @@ main {
 }
 
 .flip-clock-label {
-	color: rgb(235, 235, 235) !important;
-    font-weight: bold;
+	display:none;
+}
+
+#map-canvas { height: 600px; width: 100%;}
+
+.container{
+  width:960px;
 }
