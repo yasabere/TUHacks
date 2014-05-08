@@ -24,7 +24,7 @@ main
               ) Info
           li
             a(
-              ng-click="scrollToSlide(3)"
+              ng-click="scrollToSlide(5)"
               ) Directions
           li
             a(
@@ -202,7 +202,12 @@ main
   section#slide-5
     div.bcg
       div.hsContainer
-        div#map-canvas
+        div#map-canvas(
+		   data-bottom-top ="top:-1150px;",
+		  data-top-bottom="top: 350px;",
+		  data-anchor-target="#slide-5",
+		  style="position:absolute; z-index:2;"
+		  )
 
   section#slide-6
     

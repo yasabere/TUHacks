@@ -94,7 +94,7 @@ main {
 }
 
 #slide-5{
-	height: 600px;
+	height: 800px;
 	position:relative;	
 }
 
@@ -103,7 +103,7 @@ main {
 }
 
 #map-canvas { 
-	height: 1000px; 
+	height: 1500px; 
 	width: 100%; 
 	position:absolute
 }
