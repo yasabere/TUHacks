@@ -93,12 +93,26 @@ main {
     text-align: center
 }
 
+#slide-5{
+	height: 600px;
+	position:relative;	
+}
+
 .flip-clock-label {
 	display:none;
 }
 
-#map-canvas { height: 600px; width: 100%;}
+#map-canvas { 
+	height: 1000px; 
+	width: 100%; 
+	position:absolute
+}
 
 .container{
   width:960px;
+}
+
+.info{
+  font-size:18px;
+  line-height:2em;
 }
