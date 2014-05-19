@@ -194,7 +194,7 @@ main
           
           span(
             style="font-size:50px;"
-          ) Incredible Learning and Networking experience
+          ) An Incredible Learning and Networking experience
           
           br
           br
@@ -224,32 +224,39 @@ main
           br
           br
           br
-          
-          span(
-            style="font-size:50px;"
-          ) Register for TUHacks!
-          br
-          br
-          form(
-            style="width:30%; margin: auto;"
-            )
-            div.form-group
-              input.form-control(
-                placeholder="Enter Full Name"
-                )
-            div.form-group
-              input.form-control(
-                placeholder="Enter email"
-                )
-            div.form-group
-              input.form-control(
-                placeholder="University"
-                )
-            div.form-group
-              button(
-                type="submit",
-                class="btn btn-warning"
-              ) Submit
+          div
+            span(
+              style="font-size:50px;"
+              ng-show="formSubmitted==false"
+            ) Register for TUHacks!
+            span(
+              style="font-size:50px;"
+              ng-show="formSubmitted==true"
+            ) Thank you for registering for TUHacks!
+              h3 Your registration will now be processed
+            form#register(
+              style="width:30%; margin: auto;"
+              )
+              br
+              br
+              div.form-group
+                input.form-control(
+                  placeholder="Enter Full Name"
+                  )
+              div.form-group
+                input.form-control(
+                  placeholder="Enter email"
+                  )
+              div.form-group
+                input.form-control(
+                  placeholder="University"
+                  )
+              div.form-group
+                button(
+                  type="submit",
+                  class="btn btn-warning"
+                  ng-click="validateForm()"
+                ) Submit
           br
           br
           br
@@ -262,10 +269,9 @@ main
         style="text-align:center;"
         ) Proudly Sponsored By
       p mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images! mad sponsors images!
-      h5 
       br
       br
-      ALL RIGHTS RESERVED, TUHACKS
+      h5 ALL RIGHTS RESERVED, TUHACKS
       h6 DESIGNED & BUILT BY 
         a(
           ng-href="http://yawasabere.com"

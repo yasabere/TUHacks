@@ -143,10 +143,12 @@ angular.module('myApp.controllers', []).
 	}
     
     //form text
-    $scope.form_title = "Register for TUHacks!";
+    $scope.formSubmitted = false;
+    $('#register').collapse('show');
     
-    function validateForm(){
-        $scope.form_title = "Thank You for Registering"
+    $scope.validateForm = function(){
+        $scope.formSubmitted = true;
+        $('#register').collapse('hide');
     }
 		
   }).
