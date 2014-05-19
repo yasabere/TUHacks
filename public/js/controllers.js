@@ -20,12 +20,27 @@ angular.module('myApp.controllers', []).
   controller('MyCtrl1', function ($scope) {
     // write Ctrl here
     //alert("Hack Temple!!!!!!");
+	
+	var mapDiv = $('#map-canvas'),
+		boxDone = false,
+		map,
+        latlng, 
+		marker,
+		styledMapType;
     
     // Init Skrollr
+	initialize();
     var s = skrollr.init({
         render: function(data) {
-            //Debugging - Log the current scroll position.
-            //console.log(data.curTop);
+            if ( mapDiv.hasClass('skrollable-after') ) {
+				if ( ! boxDone ) {
+					boxDone = true;
+				    updateMap();
+				}
+			} else {
+				boxDone = false;
+				resetMap();
+			}
         }
     });
     
@@ -70,20 +85,69 @@ angular.module('myApp.controllers', []).
         }
     };
 	
-		//load google maps
-		function initialize() {
-			var mapOptions = {
-				center: new google.maps.LatLng(39.982094, -75.154656),
-				zoom: 17,
-				scrollwheel: false,
-				navigationControl: false,
-				mapTypeControl: false,
-				scaleControl: false,
-				disableDefaultUI: true
-			};
-			var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-		}
-	  initialize();
+	//load google maps
+	function initialize() {
+    
+        latlng = new google.maps.LatLng(39.982094, -75.154656);
+	
+		var stylez = [
+		  {
+			featureType: "all",
+			stylers: [
+			  { hue: "#0000ff" },
+			  { saturation: -75 }
+			]
+		  },
+		  {
+			featureType: "poi",
+			elementType: "label",
+			stylers: [
+			  { visibility: "off" }
+			]
+		  }
+		];
+	
+		var mapOptions = {
+			center: latlng,
+			zoom: 17,
+			scrollwheel: false,
+			navigationControl: false,
+			mapTypeControl: false,
+			scaleControl: false,
+			disableDefaultUI: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		
+		map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+		
+		styledMapType = new google.maps.StyledMapType(stylez, {name: "Edited"});
+		
+	}
+	
+	function updateMap(){
+		
+		map.setZoom(17);
+        marker = new google.maps.Marker({
+            position: latlng, 
+            map: map, 
+            animation: google.maps.Animation.DROP,
+            title:"Temple University"
+        });
+	}
+	
+	function resetMap(){
+		
+		if (marker)
+            marker.setMap(null);
+		map.setZoom(16);
+	}
+    
+    //form text
+    $scope.form_title = "Register for TUHacks!";
+    
+    function validateForm(){
+        $scope.form_title = "Thank You for Registering"
+    }
 		
   }).
   controller('MyCtrl2', function ($scope) {

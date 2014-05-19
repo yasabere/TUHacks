@@ -1,7 +1,11 @@
 body, html {
 	height: 100%;
 	min-height: 100%;
-	background-color: rgb(235, 235, 235);
+    background-image:url('../images/templemade.png');
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 main {
 	overflow-x: hidden;
@@ -93,9 +97,13 @@ main {
     text-align: center
 }
 
+#slide-3{
+    background-color:#ebebeb;
+}
+
 #slide-5{
-	height: 800px;
-	position:relative;	
+	height: 600px;
+	position:relative;
 }
 
 .flip-clock-label {
@@ -103,7 +111,7 @@ main {
 }
 
 #map-canvas { 
-	height: 1500px; 
+	height: 600px; 
 	width: 100%; 
 	position:absolute
 }
@@ -114,5 +122,19 @@ main {
 
 .info{
   font-size:18px;
-  line-height:2em;
+  line-height:1.80em;
+}
+
+#slide-6 input {
+	background-color: rgb(66, 8, 20);
+	border: 0px;
+	color: #EFEFEF;
+}
+
+#slide-6 button{
+	//background-color:rgb(107, 17, 34);
+}
+#slide-7{
+	color: #EFEFEF;
+    min-height:600px;
 }
