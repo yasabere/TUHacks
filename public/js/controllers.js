@@ -26,10 +26,14 @@ angular.module('myApp.controllers', []).
 		map,
         latlng, 
 		marker,
-		styledMapType;
+		styledMapType,
+    registration={};
+    
+  $scope.registrationError=false;
     
     // Init Skrollr
 	initialize();
+
     var s = skrollr.init({
         render: function(data) {
             if ( mapDiv.hasClass('skrollable-after') ) {
@@ -43,16 +47,18 @@ angular.module('myApp.controllers', []).
 			}
         }
     });
-    
+
     var clock = $('#count-down-clock').FlipClock(3600 * 24 * 3, {
 			clockFace: 'DailyCounter',
 			countdown: true
 			});
     
-    $scope.scrollToSlide = function(slideId){
+    $scope.scrollToSlide = function(slideId, duration){
       
         var htmlbody = $('html,body');
-	    var duration = 500;
+        
+        if (!duration)
+          var duration = 1000;
      
         // Custom slide content offset
         var customSlideOffset = $("#slide-"+slideId).attr('data-content-offset');
@@ -60,7 +66,7 @@ angular.module('myApp.controllers', []).
         // Scroll to the top of a container if it doesn't have custom offset defined
         if(typeof customSlideOffset === "undefined"){
      
-            htmlbody.animate({scrollTop: ($("#slide-"+slideId).offset().top) + "px"},"slow");
+            htmlbody.animate({scrollTop: ($("#slide-"+slideId).offset().top) + "px"}, duration);
       
         } 
         else {
@@ -73,13 +79,13 @@ angular.module('myApp.controllers', []).
                 
                 customSlideOffset = Math.ceil((slideHeight/100) * customSlideOffset);
                 
-                htmlbody.animate({scrollTop: ($("#slide-"+slideId).offset().top + customSlideOffset) + "px"},"slow");
+                htmlbody.animate({scrollTop: ($("#slide-"+slideId).offset().top + customSlideOffset) + "px"}, duration);
                  
             } else {
                 
                var customSlideOffset = parseInt(customSlideOffset);
                 
-               htmlbody.animate({scrollTop: ($("#slide-"+slideId).offset().top + customSlideOffset) + "px"},"slow");
+               htmlbody.animate({scrollTop: ($("#slide-"+slideId).offset().top + customSlideOffset) + "px"}, duration);
                  
             }
         }
@@ -88,7 +94,7 @@ angular.module('myApp.controllers', []).
 	//load google maps
 	function initialize() {
     
-        latlng = new google.maps.LatLng(39.982094, -75.154656);
+    latlng = new google.maps.LatLng(39.982094, -75.154656);
 	
 		var stylez = [
 		  {
@@ -147,8 +153,21 @@ angular.module('myApp.controllers', []).
     $('#register').collapse('show');
     
     $scope.validateForm = function(){
-        $scope.formSubmitted = true;
-        $('#register').collapse('hide');
+    
+        if ($scope.form.$invalid){
+          $scope.registrationError = true;
+        }
+        else{
+          $('#register').slideUp( 500, function() {
+          $('#registerMessage1').fadeOut( 'fast', function() {
+            $('#registerMessage2').fadeIn( 'fast', function() {
+              $scope.formSubmitted = true;
+              $scope.$apply();
+            });
+          });
+        });
+        }
+        
     }
 		
   }).

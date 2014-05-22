@@ -10,30 +10,42 @@ main
       data-anchor-target="#slide-2 h1"
       )
     
-      div.container(
+      div.container-fluid(
         style="text-align:center; width:425px"
         )
-        ul.nav.navbar-nav
-          li.active
-            a(
-              ng-click="scrollToSlide(1)"
-              ) Home
-          li
-            a(
-              ng-click="scrollToSlide(2)"
-              ) Info
-          li
-            a(
-              ng-click="scrollToSlide(5)"
-              ) Directions
-          li
-            a(
-              ng-click="scrollToSlide(4)"
-              ) Schedule
-          li
-            a(
-              ng-click="scrollToSlide(7)"
-              ) Sponsors
+        div.navbar-header
+          button(
+            type="button",
+            class="navbar-toggle",
+            data-toggle="collapse",
+            data-target="#navbar-collapse"
+            )
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        div.collapse.navbar-collapse#navbar-collapse 
+          ul.nav.navbar-nav
+            li.active
+              a(
+                ng-click="scrollToSlide(1)"
+                ) Home
+            li
+              a(
+                ng-click="scrollToSlide(2)"
+                ) Info
+            li
+              a(
+                ng-click="scrollToSlide(5)"
+                ) Directions
+            li
+              a(
+                ng-click="scrollToSlide(4)"
+                ) Schedule
+            li
+              a(
+                ng-click="scrollToSlide(7)"
+                ) Sponsors
             
     div(
       style="position:absolute; z-index:3; margin-top:0px; height:100%;"
@@ -56,7 +68,7 @@ main
           div.text-center(
             style="margin: 0 auto;text-align: center;"
             )
-            span#count-down-clock.center-block(
+            span#count-down-clock.center-block.hidden-sm.hidden-xs(
               style="display:inline-block; text-align: center; width:620px;"
               )
         
@@ -65,7 +77,7 @@ main
             ) &lt;TUHacks/&gt;
           img(
           	src="images/tulogo.png"
-            style="height:300px; height:30vh;"
+            style="height:30%;"
             )
           h2 Fall 2014
           
@@ -73,7 +85,7 @@ main
           
           button(
             style="position:relative;margin-top:0px; border: 0px; background-color:rgba(20,20,20,.5); padding:10px; font-size:20px; font-weight:bold;"
-            ng-click="scrollToSlide(6, 6000)"
+            ng-click="scrollToSlide(6, 2000)"
             ) REGISTER
             
     div.bcg(
@@ -225,36 +237,78 @@ main
           br
           br
           div
-            span(
+            span#registerMessage1(
               style="font-size:50px;"
               ng-show="formSubmitted==false"
             ) Register for TUHacks!
-            span(
+            span#registerMessage2(
               style="font-size:50px;"
               ng-show="formSubmitted==true"
             ) Thank you for registering for TUHacks!
               h3 Your registration will now be processed
             form#register(
               style="width:30%; margin: auto;"
+              name="form"
+              novalidate="true"
               )
               br
+              h4.text-danger(
+                ng-show="registrationError"
+              ) Form could not be submitted!
               br
-              div.form-group
+              div.form-group.right-inner-addon(
+                 ng-class="{ 'has-error': (form.fullName.$error.required && registrationError) }"
+                )
                 input.form-control(
-                  placeholder="Enter Full Name"
+                  type="text"
+                  placeholder="Enter Full Name",
+                  name="fullName"
+                  ng-model="registration.fullName"
+                  required="true"
                   )
-              div.form-group
-                input.form-control(
-                  placeholder="Enter email"
+                span.glyphicon.glyphicon-ok.form-control-feedback(
+                  ng-show="!form.fullName.$error.required"
                   )
-              div.form-group
+                span.glyphicon.glyphicon-remove.form-control-feedback(
+                  ng-show="(form.fullName.$error.required && registrationError)"
+                  )
+              div.form-group.right-inner-addon(
+                 ng-class="{ 'has-error': (form.email.$error.required || form.email.$error.email) && registrationError }"
+                )
                 input.form-control(
-                  placeholder="University"
+                  type="email"
+                  placeholder="Enter Email",
+                  name="email",
+                  ng-model="registration.email"
+                  email,
+                  required
+                  )
+                span.glyphicon.glyphicon-ok.form-control-feedback(
+                  ng-show="!form.email.$error.required && !form.email.$error.email"
+                  )
+                span.glyphicon.glyphicon-remove.form-control-feedback(
+                  ng-show="(form.email.$error.required || form.email.$error.email) && registrationError"
+                  )
+              div.form-group.right-inner-addon(
+                 ng-class="{ 'has-error': (form.university.$error.required && registrationError) }"
+                )
+                input.form-control(
+                  type="text"
+                  placeholder="Enter University",
+                  ng-model="registration.university"
+                  name="university",
+                  required
+                  )
+                span.glyphicon.glyphicon-ok.form-control-feedback(
+                  ng-show="!form.university.$error.required"
+                  )
+                span.glyphicon.glyphicon-remove.form-control-feedback(
+                  ng-show="(form.university.$error.required && registrationError)"
                   )
               div.form-group
                 button(
                   type="submit",
-                  class="btn btn-warning"
+                  class="btn btn-warning",
                   ng-click="validateForm()"
                 ) Submit
           br

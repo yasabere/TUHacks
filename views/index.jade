@@ -1,9 +1,9 @@
 extends layout
 
 block body
-  div(ng-controller='AppCtrl')
+  div.controller(ng-controller='AppCtrl')
       
-    div(ng-view)
+    div.view(ng-view)
 
   script(src='system/lib/jquery/dist/jquery.min.js')
   script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCNb1P6SAAoHO98FHW9IxmWAlPnw4lC0rY&sensor=false')

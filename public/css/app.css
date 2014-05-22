@@ -1,14 +1,23 @@
 body, html {
 	height: 100%;
 	min-height: 100%;
-    background-image:url('../images/templemade.png');
-    background-position: center center;
+  background-image:url('../images/templemade.png');
+  background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 }
 main {
 	overflow-x: hidden;
+  height: 100%;
+}
+
+#controller{
+  height: 100%;
+}
+
+#view{
+  height: 100%;
 }
 
 .bcg {
@@ -80,21 +89,32 @@ main {
 }
 
 /* Slide 1 */
+#slide-1{
+  position: relative;
+  min-height: 300px;
+  height:500px;
+  height:98vh;
+}
+
 #slide-1 .bcg {
   background-image:url('../images/templemade.png');
-  height: 98vh;
+  overflow: hidden;
+  min-height: 100%;
+  max-height: 100%;
 }
 
 #slide-1 .bcg.bcg-fade-out {
   background-image:url('../images/templemade_original.jpg');
-  height: 98vh;
+  min-height: 100%;
+  max-height: 100%;
 }
 
 /* CSS - Slide 2 */
 #slide-2 .bcg {
     background: none;
     background-color: #010101;
-    text-align: center
+    text-align: center;
+    position: relative;
 }
 
 #slide-3{
@@ -137,4 +157,29 @@ main {
 #slide-7{
 	color: #EFEFEF;
     min-height:600px;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    padding-right: 30px;    
+}
+.right-inner-addon .glyphicon {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+    pointer-events: none;
 }
