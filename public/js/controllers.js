@@ -49,13 +49,23 @@ angular.module('myApp.controllers', []).
             resetMap();
           }
           
-          $('.skrollable-between').each(function( index ) {
+          $('section').waypoint(function(direction) {
+            if (direction === 'down') {
+              currentIndex = $(this).index();
+            }
+            $('.MenuLinkTo'+currentIndex).removeClass( 'active' )
+          }, 
+          { offset: 50 });
+          $('.MenuLinkTo'+currentIndex).addClass( 'active' )
+          console.log('.MenuLinkTo'+currentIndex);
+          
+          /*$('.skrollable-between').each(function( index ) {
             //if (currentIndex != index){
             //  console.log( index + ": " + $( this ).text() );
             //  currentIndex = index;
             //}
             console.log( index + ": " + $( this ).text() );
-          });
+          });*/
         }
     });
 
