@@ -27,7 +27,8 @@ angular.module('myApp.controllers', []).
         latlng, 
 		marker,
 		styledMapType,
-    registration={};
+    registration={},
+    currentIndex;
     
   $scope.registrationError=false;
     
@@ -35,16 +36,26 @@ angular.module('myApp.controllers', []).
 	initialize();
 
     var s = skrollr.init({
+        forceHeight:true,
         render: function(data) {
-            if ( mapDiv.hasClass('skrollable-after') ) {
-				if ( ! boxDone ) {
-					boxDone = true;
-				    updateMap();
-				}
-			} else {
-				boxDone = false;
-				resetMap();
-			}
+          if ( mapDiv.hasClass('skrollable-after') ) {
+            if ( ! boxDone ) {
+              boxDone = true;
+                updateMap();
+            } 
+          }
+          else {
+            boxDone = false;
+            resetMap();
+          }
+          
+          $('.skrollable-between').each(function( index ) {
+            //if (currentIndex != index){
+            //  console.log( index + ": " + $( this ).text() );
+            //  currentIndex = index;
+            //}
+            console.log( index + ": " + $( this ).text() );
+          });
         }
     });
 

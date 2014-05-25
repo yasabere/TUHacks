@@ -183,3 +183,19 @@ main {
     padding: 10px 12px;
     pointer-events: none;
 }
+#RegisterButton{
+  position:relative;
+  margin-top:0px; 
+  border: 0px; 
+  background-color:rgba(20,20,20,.5); 
+  padding:10px; 
+  font-size:20px; 
+  font-weight:bold;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container{
+  max-width:100%;
+}
